@@ -5,7 +5,7 @@ import { Flex, Box, Text, Button } from '@chakra-ui/react';
 import { baseUrl, fetchApi } from '../utils/fetchApi'
 import Property from '../components/Property';
 
-const Banner = ({ purpose, title1, title2, desc1, desc2, buttonText, linkName, imageUrl }) => (
+export const Banner = ({ purpose, title1, title2, desc1, desc2, buttonText, linkName, imageUrl }) => (
   <Flex flexWrap="wrap" justifyContent="center" backgroundColor="gray.300" alignItems="center" m="10">
     <Image src={imageUrl} width={500} height={300} alt="banner" />
     <Box p="5">
@@ -19,8 +19,7 @@ const Banner = ({ purpose, title1, title2, desc1, desc2, buttonText, linkName, i
   </Flex>
 )
 
-export default function Home({ propertiesForRent, propertiesForSale }) {
-  return (
+const Home = ({ propertiesForRent, propertiesForSale }) => (
     <Box>
       <Banner 
         purpose="RENT A HOME"
@@ -51,8 +50,7 @@ export default function Home({ propertiesForRent, propertiesForSale }) {
         {propertiesForSale.map((property) => <Property property={property} key={property.id} />)}
       </Flex>
     </Box>
-  )
-}
+  );
 
 export async function getStaticProps() {
   const propertyForSale = await fetchApi(`${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-sale&hitsPerPage=6`)
@@ -65,3 +63,5 @@ export async function getStaticProps() {
     }
   }
 }
+
+export default Home;
