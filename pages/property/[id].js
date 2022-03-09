@@ -14,7 +14,7 @@ const PropertyDetails = ({ propertyDetails: { price, rentFrequency, rooms, title
       <Flex paddingTop='2' alignItems='center'>
         <Box paddingRight='3' color='green.400'>{isVerified && <GoVerified />}</Box>
         <Text fontWeight='bold' fontSize='lg'>
-          AED {price} {rentFrequency && `/${rentFrequency}`}
+          PHP {price} {rentFrequency && `/${rentFrequency}`}
         </Text>
         <Spacer />
         <Avatar size='sm' src={agency?.logo?.url}></Avatar>
@@ -48,7 +48,7 @@ const PropertyDetails = ({ propertyDetails: { price, rentFrequency, rooms, title
         <Flex flexWrap='wrap'>
           {amenities?.map((item) => (
               item?.amenities?.map((amenity) => (
-                <Text key={amenity.text} fontWeight='bold' color='blue.400' fontSize='l' p='2' bg='gray.200' m='1' borderRadius='5'>
+                <Text key={amenity.text} fontWeight='bold' color='purple.500' fontSize='l' p='2' bg='gray.200' m='1' borderRadius='5'>
                   {amenity.text}
                 </Text>
               ))

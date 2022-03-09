@@ -6,11 +6,11 @@ import Footer from './Footer';
 
 const Layout = ({ children }) => {
     return (
-        <>
+        <Box bgGradient='linear(to-r, green.100, pink.200)'>
           <Head>
             <title>Real Estate</title>
           </Head>
-          <Box maxWidth='1280px' m='auto'>
+          <Box bgGradient='linear(to-r, green.100, pink.200)' maxWidth='1280px' m='auto'>
             <header>
               <Navbar />
             </header>
@@ -19,7 +19,7 @@ const Layout = ({ children }) => {
               <Footer />
             </footer>
           </Box>
-        </>
+        </Box>
       );
 };
 
